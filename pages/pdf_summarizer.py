@@ -12,7 +12,7 @@ from langchain.chains import create_retrieval_chain, create_history_aware_retrie
 from langchain_core.chat_history import BaseChatMessageHistory, InMemoryChatMessageHistory
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
-
+ from langchain.vectorstores import FAISS
 
 HF_API_KEY = st.secrets["HF_API_KEY"]
 
@@ -95,11 +95,9 @@ if api_key:
         print(f"Split into {len(splits)} chunks")
 
         embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        vectorstore = Chroma.from_documents(
-        documents=splits,
-        embedding=embeddings,
-        persist_directory=None  # Ensure it's in-memory
-        )
+       
+
+        vectorstore = FAISS.from_documents(splits, embeddings)
 
         retriever = vectorstore.as_retriever()
         print("Vector store and retriever created.")
