@@ -55,7 +55,6 @@ groq_api_key = st.secrets["GROQ_API_KEY"]
 # Store API key in session state
 if groq_api_key:
     st.session_state["groq_api_key"] = groq_api_key
-    st.success("API key stored successfully!")
 else:
     st.warning("Please enter your API key.")
 
