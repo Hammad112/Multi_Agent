@@ -25,20 +25,17 @@ else:
 st.markdown("---")
 st.subheader("🧠 Available Tools")
 
-col1, col2, col3 , col4 = st.columns(4)
+col1, col2, col3  = st.columns(3)
+
 
 with col1:
-    if st.button("📄 PDF Summarizer") and "groq_api_key" in st.session_state:
-        st.switch_page("pages/pdf_summarizer.py")
-
-with col2:
     if st.button("🤖 Research Paper Search") and "groq_api_key" in st.session_state:
         st.switch_page("pages/research_paper.py")
 
-with col3:
+with col2:
     if st.button("📺 Youtube Summarizer") and "groq_api_key" in st.session_state:
         st.switch_page("pages/yt_summarizer.py")
 
-with col4:
+with col3:
     if st.button("📺 Text to Image") and "groq_api_key" in st.session_state:
         st.switch_page("pages/image_gen.py")
