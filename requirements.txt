@@ -28,4 +28,5 @@ youtube-transcript-api
 numexpr
 langchain 
 tiktoken
+protobuf==3.20.3
 
