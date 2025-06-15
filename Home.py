@@ -59,7 +59,7 @@ else:
     st.warning("Please enter your API key.")
 
 # Navigation buttons
-st.markdown("---")
+
 st.subheader("🧠 Available Tools")
 
 col1, col2, col3  = st.columns(3)
@@ -76,3 +76,5 @@ with col2:
 with col3:
     if st.button("📺 Text to Image") and "groq_api_key" in st.session_state:
         st.switch_page("pages/image_gen.py")
+
+st.markdown("-------------------------------")
