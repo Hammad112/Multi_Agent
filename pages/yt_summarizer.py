@@ -73,7 +73,7 @@ prompt = PromptTemplate(template=map_reduce_prompt, input_variables=['text'])
 
 # Main logic
 if st.button('Summarize'):
-    if not groq_api_key.strip() or not generic_url.strip():
+    if not (groq_api_key and groq_api_key.strip()) or not (generic_url and generic_url.strip()):
         st.error('❌ Please provide both a valid URL and your API key.')
     elif not validators.url(generic_url):
         st.error('❌ Invalid URL format.')
