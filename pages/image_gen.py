@@ -18,7 +18,7 @@ def main():
     st.title("Flux.1-dev Image Generator")
     st.write("Generate images using NVIDIA's Flux.1-dev model. Enter your prompt and parameters below.")
     
-    api_key = st.secrets["Nvidia"]
+    api_key = st.input_text('Enter your api key',type='passwrod')
 
     # API endpoint
     invoke_url = "https://ai.api.nvidia.com/v1/genai/black-forest-labs/flux.1-dev"
