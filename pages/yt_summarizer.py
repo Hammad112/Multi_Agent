@@ -9,8 +9,6 @@ from langchain.chains.summarize import load_summarize_chain
 from langchain_community.document_loaders import YoutubeLoader, UnstructuredURLLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-# Load env variables
-load_dotenv(override=True)
 
 # Streamlit UI
 st.set_page_config(page_title='Langchain: Summarize Text From YT or Website', page_icon='🧠')
