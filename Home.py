@@ -3,8 +3,46 @@ import streamlit as st
 
 st.set_page_config(page_title="🏠 Home", layout="centered")
 
-st.title("📚 LangChain Multi-Tool App")
-st.markdown("Welcome! Please enter your Groq API key to proceed.")
+
+st.markdown("""
+    <style>
+    .animated-title {
+        font-size: 32px;
+        font-weight: bold;
+        background: linear-gradient(270deg, #ff4b1f, #1fddff, #ff4b1f);
+        background-size: 600% 600%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 5s ease infinite;
+    }
+
+    @keyframes shine {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .animated-subtitle {
+        font-size: 20px;
+        color: white;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeSlide 2s ease forwards;
+        animation-delay: 0.5s;
+    }
+
+    @keyframes fadeSlide {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+
+    <div class="animated-title">📚 LangChain Multi-Tool App</div>
+    <div class="animated-subtitle">Ask Anything — We'll Search Wikipedia, Arxiv, and the Web for You</div>
+""", unsafe_allow_html=True)
+
 
 langsmith_tracing = st.secrets["LANGSMITH_TRACING"]
 langsmith_api_key = st.secrets["LANGSMITH_API_KEY"]
