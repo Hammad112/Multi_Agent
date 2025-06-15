@@ -1,25 +1,18 @@
 import streamlit as st
-import os
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv(override=True)
 
 st.set_page_config(page_title="🏠 Home", layout="centered")
 
 st.title("📚 LangChain Multi-Tool App")
 st.markdown("Welcome! Please enter your Groq API key to proceed.")
 
-LANGSMITH_TRACING='true'
-LANGSMITH_API_KEY=''
-LANGSMITH_PROJECT='Multi Agent'
-
-
-
+langsmith_tracing = st.secrets["LANGSMITH_TRACING"]
+langsmith_api_key = st.secrets["LANGSMITH_API_KEY"]
+langsmith_project = st.secrets["LANGSMITH_PROJECT"]
 
 st.markdown("-------------------------------")
-# Groq API key input
-groq_api_key = ''
+
+groq_api_key = st.secrets["GROQ_API_KEY"]
 
 # Store API key in session state
 if groq_api_key:
