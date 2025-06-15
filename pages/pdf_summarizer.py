@@ -95,7 +95,12 @@ if api_key:
         print(f"Split into {len(splits)} chunks")
 
         embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        vectorstore = Chroma.from_documents(documents=splits, embedding=embeddings)
+        vectorstore = Chroma.from_documents(
+        documents=splits,
+        embedding=embeddings,
+        persist_directory=None  # Ensure it's in-memory
+        )
+
         retriever = vectorstore.as_retriever()
         print("Vector store and retriever created.")
 
