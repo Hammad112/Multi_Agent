@@ -1,6 +1,4 @@
 import streamlit as st
-import os
-from dotenv import load_dotenv
 
 from langchain_groq import ChatGroq
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -15,10 +13,9 @@ from langchain_core.chat_history import BaseChatMessageHistory, InMemoryChatMess
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
-# Load environment variables
-load_dotenv(override=True)
 
-HF_API_KEY=''
+HF_API_KEY = st.secrets["HF_API_KEY"]
+
 
 # Streamlit UI
 st.markdown("""
