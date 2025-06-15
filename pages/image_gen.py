@@ -12,15 +12,13 @@ warnings.filterwarnings("ignore")
 # Load environment variables
 load_dotenv(override=True)
 
-Nvidia='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'
 
 # Streamlit app
 def main():
     st.title("Flux.1-dev Image Generator")
     st.write("Generate images using NVIDIA's Flux.1-dev model. Enter your prompt and parameters below.")
     
-    api_key='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'
-
+    api_key = st.secrets["Nvidia"]
 
     # API endpoint
     invoke_url = "https://ai.api.nvidia.com/v1/genai/black-forest-labs/flux.1-dev"
